@@ -59,7 +59,7 @@ now=$(date +'%H%M%S')
 
 logname="upload-${now}.log"
 
-cd repository
+cd maven
 
 list=$(find ./org -type d -name "ignite-*")
 
