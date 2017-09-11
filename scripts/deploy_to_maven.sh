@@ -59,7 +59,7 @@ now=$(date +'%H%M%S')
 
 logname="upload-${now}.log"
 
-cd temprepo
+cd repository
 
 list=$(find ./org -type d -name "ignite-*")
 
