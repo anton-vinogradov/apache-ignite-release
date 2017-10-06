@@ -3,7 +3,7 @@
 now=$(date +'%H%M%S')
 logname="sign-${now}.log"
 
-list=$(find ./release/svn/vote -type f -name "*.zip")
+list=$(find ./svn/vote -type f -name "*.zip")
 
 echo $list
 
