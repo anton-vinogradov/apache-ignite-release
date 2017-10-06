@@ -1,56 +1,9 @@
 #!/usr/bin/env bash
 
-function print_help()
-{
-    echo
-    echo "Script for signing artifacts and uploading locally staged Apache-Ignite repository to the remote staging repository."
-    echo
-    echo "Usage:"
-    echo "Place the script next to the \"org\" directory of your locally staged repository."
-    echo "Run: sign-and-deploy.sh "
-    echo
-    echo "You need to add \"gpg\" profile to your maven settings.xml file:"
-    echo "<settings>"
-    echo "..."
-    echo "    <profiles>"
-    echo "    ..."
-    echo "        <profile>"
-    echo "           <id>gpg</id>"
-    echo "           <properties>"
-    echo "                <gpg.keyname>your_key_name</gpg.keyname>"
-    echo "                <gpg.passphrase>your_pass_phrase</gpg.passphrase>"
-    echo "                <gpg.useagent>false</gpg.useagent>"
-    echo "            </properties>"
-    echo "        </profile>"
-    echo "    </profiles>"
-    echo "</settings>"
-    echo
-    echo "Also you need to configure \"servers\" section in your maven settings.xml file:"
-    echo "<settings>"
-    echo "..."
-    echo "    <servers>"
-    echo "    ..."
-    echo "        <server>"
-    echo "            <id>apache.releases.https</id>"
-    echo "            <username>your_login</username>"
-    echo "            <password>your_password</password>"
-    echo "        </server>"
-    echo "    </servers>"
-    echo "</settings>"
-}
+chmod +x release.properties
+. ./release.properties
 
-for arg in $@
-do
-    if [[ $arg == "-h"  || $arg == "--help" ]]
-    then
-        print_help
-        exit 0
-    else
-        echo "Unknown argument: ${arg}"
-        print_help
-        exit 1
-    fi
-done
+echo "Preparing vote ${ignite_version}${rc_name}"
 
 server_url="https://repository.apache.org/service/local/staging/deploy/maven2"
 server_id="apache.releases.https"
@@ -63,15 +16,9 @@ cd maven
 
 list=$(find ./org -type d -name "ignite-*")
 
-alldirs=$(find ./org -type d -name "ignite-*" | wc -l)
+total_cnt=$(find ./org -type d -name "ignite-*" | wc -l)
 
 cnt=0
-
-cd ./org/apache/ignite/ignite-core/
-
-ignite_version=$(ls -d */ | cut -f1 -d'/')
-
-cd ../../../..
 
 for dir in $list
 do
@@ -91,7 +38,7 @@ do
 
     cnt=$((cnt+1))
 
-    echo "Uploading ${dir} (${cnt} of ${alldirs})."
+    echo "Uploading ${dir} (${cnt} of ${total_cnt})."
 
     if [[ $javadoc == *javadoc* ]]
     then
@@ -141,3 +88,6 @@ while IFS='' read -r line || [[ -n "$line" ]]; do
 done < ./$logname
 
 echo $result
+
+echo "Please check results..."
+read promt

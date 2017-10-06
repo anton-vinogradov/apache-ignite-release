@@ -3,6 +3,8 @@
 chmod +x release.properties
 . ./release.properties
 
+echo "Preparing vote ${ignite_version}${rc_name}"
+
 cd git
 
 echo "Removing obsolete tag..."
@@ -19,3 +21,6 @@ echo "Creating new tag..."
 git commit -a -m "version changed to: ${ignite_version}"
 git tag -a $ignite_version$rc_name -m "${ignite_version}${rc_name}"
 git push origin $ignite_version$rc_name
+
+echo "Please check results..."
+read promt
