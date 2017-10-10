@@ -1,11 +1,15 @@
 #!/usr/bin/env bash
 
-chmod +x release-properties.log
-. ./release-properties.log
+chmod +x release.properties
+. ./release.properties
 
 echo "Releasing ${ignite_version}${rc_name}"
 
+rm -r fabric
+
 unzip svn/vote/apache-ignite-fabric-*-bin.zip -d fabric
+
+echo "Uploading to svn ..."
 
 #uncomment subsequent line in case you want to remove incorrectly released vote
 #svn rm -m "Removing redundant Release" https://svn.apache.org/repos/asf/ignite/site/trunk/releases/$ignite_version || true
