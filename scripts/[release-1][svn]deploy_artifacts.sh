@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-chmod +x release-properties.log
-. ./release-properties.log
+chmod +x release.properties
+. ./release.properties
 
 echo "Releasing ${ignite_version}${rc_name}"
 
