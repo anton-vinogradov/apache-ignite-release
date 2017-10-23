@@ -12,7 +12,7 @@ See https://msdn.microsoft.com/en-us/commandline/wsl/install_guide for details
 - Create/Import your pgp secret key.
   In case you have no pgp key, please follow instructions from https://www.apache.org/dev/openpgp.html#generate-key
 
-  Perform all operations at bash console in case you're on Windows and using WSL.
+  Perform all operations at bash console in case you're on Windows and using WSL (type "bash" at windows console)
 
   Don't forget to add your public pgp key here to https://dist.apache.org/repos/dist/release/ignite/KEYS.txt
   https://dist.apache.org is a svn repository and can be updated using your apache credentials.
