@@ -9,12 +9,13 @@ See https://msdn.microsoft.com/en-us/commandline/wsl/install_guide for details
 - GPG (already installed at most of *Nix)
 
 2) Configuration required to perform release:
-- Import your pgp secret key.
+- Create/Import your pgp secret key.
+  In case you have no pgp key, please follow instructions from https://www.apache.org/dev/openpgp.html#generate-key
 
-  gpg --import private.key
-  Perform this operation at bash console in case you're on Windows and using WSL.
+  Perform all operations at bash console in case you're on Windows and using WSL.
 
   Don't forget to add your public pgp key here to https://dist.apache.org/repos/dist/release/ignite/KEYS.txt
+  https://dist.apache.org is a svn repository and can be updated using your apache credentials.
 
 - Configure maven setting.xml:
 
