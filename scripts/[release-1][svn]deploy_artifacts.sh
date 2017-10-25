@@ -10,4 +10,3 @@ echo "Releasing ${ignite_version}${rc_name}"
 svn mv https://dist.apache.org/repos/dist/dev/ignite/$ignite_version$rc_name https://dist.apache.org/repos/dist/release/ignite/$ignite_version -m "Release ${ignite_version}"
 
 echo "Please check results..."
-read promt

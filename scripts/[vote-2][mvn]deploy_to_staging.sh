@@ -90,4 +90,3 @@ done < ./$logname
 echo $result
 
 echo "Please check results..."
-read promt

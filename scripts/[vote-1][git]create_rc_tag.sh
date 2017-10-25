@@ -23,4 +23,3 @@ git tag -a $ignite_version$rc_name -m "${ignite_version}${rc_name}"
 git push origin $ignite_version$rc_name
 
 echo "Please check results..."
-read promt

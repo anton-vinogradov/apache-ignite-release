@@ -18,4 +18,3 @@ svn import fabric/apache-ignite-fabric-$ignite_version-bin/platforms/cpp/docs ht
 svn import fabric/apache-ignite-fabric-$ignite_version-bin/platforms/dotnet/docs https://svn.apache.org/repos/asf/ignite/site/trunk/releases/$ignite_version/dotnetdoc -m "new Release (${ignite_version})"
 
 echo "Please check results..."
-read promt
