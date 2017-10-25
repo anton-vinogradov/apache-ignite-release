@@ -9,7 +9,7 @@
     - Git command line client
         Don't forget to configure username and email
             git config --global user.name "John Doe"
-            git config --global user.email johndoe@apache.com
+            git config --global user.email johndoe@apache.org
     - GPG (already installed at most of *Nix)
 
 2) Configuration required to perform release:
