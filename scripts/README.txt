@@ -17,6 +17,11 @@ See https://msdn.microsoft.com/en-us/commandline/wsl/install_guide for details
   Don't forget to add your public pgp key here to https://dist.apache.org/repos/dist/release/ignite/KEYS.txt
   https://dist.apache.org is a svn repository and can be updated using your apache credentials.
 
+  Append you key using commands:
+
+  gpg --list-sigs <keyname> >> KEYS
+  gpg --armor --export <keyname> >> KEYS
+
 - Configure maven setting.xml:
 
 Add following and fill <username>, <password> and <gpg.*>
