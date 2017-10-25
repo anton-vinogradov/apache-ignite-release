@@ -21,8 +21,8 @@
 
         Append you key using commands:
 
-        gpg --list-sigs <keyname> >> KEYS
-        gpg --armor --export <keyname> >> KEYS
+        gpg --list-sigs <keyname> >> KEYS.txt
+        gpg --armor --export <keyname> >> KEYS.txt
 
     - Configure maven setting.xml:
 
@@ -47,14 +47,16 @@
            </profile>
         </profiles>
 
-3) Perform vote steps and start Vote.
+3) Perform Vote steps and start Vote.
     Run all vote*.sh scripts
+    Scripts are independent of each other and can be run in parallel, except *X_step_Y*.sh
 
 3.1) Perform Release Verification and send Release For Vote
     See https://cwiki.apache.org/confluence/display/IGNITE/Release+Process for details
 
-4) Once Vote accepted, perform release steps.
+4) Once Vote accepted, perform Release steps.
     Run all release*.sh scripts
+    Scripts are independent of each other and can be run in parallel, except *X_step_Y*.sh
 
 4.1) Close Vote
     See https://cwiki.apache.org/confluence/display/IGNITE/Release+Process for details
