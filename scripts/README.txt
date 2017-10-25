@@ -7,6 +7,9 @@
     - Java 7.x or 8.x
     - Svn command line client
     - Git command line client
+        Don't forget to configure username and email
+            git config --global user.name "John Doe"
+            git config --global user.email johndoe@apache.com
     - GPG (already installed at most of *Nix)
 
 2) Configuration required to perform release:
