@@ -17,4 +17,8 @@ svn import fabric/apache-ignite-fabric-$ignite_version-bin/docs https://svn.apac
 svn import fabric/apache-ignite-fabric-$ignite_version-bin/platforms/cpp/docs https://svn.apache.org/repos/asf/ignite/site/trunk/releases/$ignite_version/cppdoc -m "new Release (${ignite_version})"
 svn import fabric/apache-ignite-fabric-$ignite_version-bin/platforms/dotnet/docs https://svn.apache.org/repos/asf/ignite/site/trunk/releases/$ignite_version/dotnetdoc -m "new Release (${ignite_version})"
 
-echo "Please check results..."
+echo " "
+echo "======================================================"
+echo "Documentation should be uploaded to site repository"
+echo "Please check results at"
+echo "https://svn.apache.org/repos/asf/ignite/site/trunk/releases"

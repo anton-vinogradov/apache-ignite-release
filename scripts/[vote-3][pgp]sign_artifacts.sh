@@ -26,4 +26,8 @@ done < ./$logname
 
 echo $result
 
-echo "Please check results..."
+echo " "
+echo "======================================================"
+echo "Artifacts should be signed"
+echo "Please check results at ./svn/vote"
+echo "Each zip should have corresponding *.asc file"

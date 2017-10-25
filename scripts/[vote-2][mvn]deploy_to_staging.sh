@@ -89,4 +89,9 @@ done < ./$logname
 
 echo $result
 
-echo "Please check results..."
+echo " "
+echo "======================================================"
+echo "Maven staging should be created"
+echo "Please check results at"
+echo "https://repository.apache.org/#stagingRepositories"
+echo "Don't forget to close staging with proper comment"

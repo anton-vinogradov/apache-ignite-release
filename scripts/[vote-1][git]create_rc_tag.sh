@@ -22,4 +22,8 @@ git commit -a -m "version changed to: ${ignite_version}"
 git tag -a $ignite_version$rc_name -m "${ignite_version}${rc_name}"
 git push origin $ignite_version$rc_name
 
-echo "Please check results..."
+echo " "
+echo "======================================================"
+echo "RC tag should be created."
+echo "Please check results at "
+echo "https://git-wip-us.apache.org/repos/asf?p=ignite.git;a=tags"
