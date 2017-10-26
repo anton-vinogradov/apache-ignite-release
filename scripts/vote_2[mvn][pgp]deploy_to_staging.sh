@@ -78,7 +78,7 @@ do
     mvn gpg:sign-and-deploy-file -Pgpg -Dfile=$main_file -Durl=$server_url -DrepositoryId=$server_id -DretryFailedDeploymentCount=10 -DpomFile=$pom ${adds} >> ./$logname
 done
 
-result="Uploaded OK."
+result="Uploaded"
 
 while IFS='' read -r line || [[ -n "$line" ]]; do
     if [[ $line == *ERROR* ]]
