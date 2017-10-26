@@ -13,7 +13,7 @@
     - GPG (already installed at most of *Nix)
 
     In case you're on Windows, please make sure all listed software installed under WLS.
-    Type "bash" at windows console and check each one. Use following command to check.
+    Type "bash" at Windows console and check each one. Use following commands to check:
         java -version
         git --version
         svn --version
