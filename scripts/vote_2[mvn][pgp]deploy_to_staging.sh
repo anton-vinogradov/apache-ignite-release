@@ -10,7 +10,7 @@ server_id="apache.releases.https"
 
 now=$(date +'%H%M%S')
 
-logname="upload-${now}.log"
+logname="../vote_2_${now}.log"
 
 cd maven
 

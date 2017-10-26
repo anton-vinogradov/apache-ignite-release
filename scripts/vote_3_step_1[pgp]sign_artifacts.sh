@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 now=$(date +'%H%M%S')
-logname="sign-${now}.log"
+logname="vote_3_${now}.log"
 
 list=$(find ./svn/vote -type f -name "*.zip")
 
