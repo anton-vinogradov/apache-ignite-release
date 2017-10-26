@@ -12,6 +12,15 @@
             git config --global user.email johndoe@apache.org
     - GPG (already installed at most of *Nix)
 
+    In case you're on Windows, please make sure all listed software installed under WLS.
+    Type "bash" at windows console and check each one. Use following command to check.
+        java -version
+        git --version
+        svn --version
+        mvn -version
+        gpg --version
+    and use 'apt-get install ...' to install in case missed software found
+
 2) Configuration required to perform release:
     - Create/Import your pgp secret key.
         In case you have no pgp key, please follow instructions from https://www.apache.org/dev/openpgp.html#generate-key
