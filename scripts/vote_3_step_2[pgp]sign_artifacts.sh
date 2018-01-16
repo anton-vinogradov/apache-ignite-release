@@ -3,7 +3,7 @@
 now=$(date +'%H%M%S')
 logname="vote_3_${now}.log"
 
-list=$(find ./svn/vote -type f -name "*.zip")
+list=$({ find ./svn/vote -type f -name "*.zip"; find ./svn/vote/rpm -type f -name "*"; })
 
 echo $list
 
