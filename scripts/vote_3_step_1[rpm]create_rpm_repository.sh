@@ -3,6 +3,16 @@
 REPO_ROOT="svn/vote/rpm"
 
 #
+# Install required packages if necessary
+#
+if [ ! -f /usr/bin/rpm -o ! -f /usr/bin/rpmsign -o ! -f /usr/bin/createrepo ]
+then
+    echo "# Installing requred packages #"
+    sudo apt-get update
+    sudo apt-get install createrepo rpm --no-install-recommends -y
+fi
+
+#
 # Prepare repository root
 #
 echo "# Preparing repository root #"
