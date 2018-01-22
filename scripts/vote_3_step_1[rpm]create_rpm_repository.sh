@@ -1,15 +1,21 @@
 #!/usr/bin/env bash
 
-REPO_ROOT="svn/vote/rpm"
+chmod +x release.properties
+. ./release.properties
+
+REPO_ROOT="rpm/$(echo ${ignite_version} | cut -f1 -d.).x"
 
 #
 # Install required packages if necessary
 #
-if [ ! -f /usr/bin/rpm -o ! -f /usr/bin/rpmsign -o ! -f /usr/bin/createrepo ]
+if [ ! -f /usr/bin/rpm -o \
+     ! -f /usr/bin/rpmsign -o \
+     ! -f /usr/bin/createrepo -o \
+     ! -f /usr/bin/gpg-connect-agent ]
 then
     echo "# Installing requred packages #"
     sudo apt-get update
-    sudo apt-get install createrepo rpm --no-install-recommends -y
+    sudo apt-get install rpm createrepo gnupg-agent --no-install-recommends -y
 fi
 
 #
