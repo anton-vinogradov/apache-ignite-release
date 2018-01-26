@@ -57,8 +57,10 @@
         </profiles>
 
 3) Perform Vote steps and start Vote.
-    Run all vote*.sh scripts (with sudo)
+    Run all vote*.sh scripts
     Scripts are independent of each other and can be run in parallel, except *X_step_Y*.sh
+
+    NOTE: some scripts may require sudo permissions, so you will be asked for sudo password
 
 3.1) Perform Release Verification and send Release For Vote
     See https://cwiki.apache.org/confluence/display/IGNITE/Release+Process for details
@@ -70,5 +72,4 @@
 4.1) Close Vote
     See https://cwiki.apache.org/confluence/display/IGNITE/Release+Process for details
     Don't forget about Post-release steps
-
 
