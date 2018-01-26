@@ -50,5 +50,7 @@ echo
 # Create repository layout
 #
 echo "# Creating repository layout #"
-createrepo -v -p -s sha512 --update ${REPO_ROOT}
+CREATEREPO=createrepo
+grep -q "Microsoft" /proc/version && CREATEREPO="sudo ${CREATEREPO}"    # Detect Windows 10 WSL
+${CREATEREPO} -v -p -s sha512 --update ${REPO_ROOT}
 
