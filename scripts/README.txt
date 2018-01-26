@@ -33,7 +33,7 @@
         gpg --list-sigs <keyname> >> KEYS.txt
         gpg --armor --export <keyname> >> KEYS.txt
 
-    - Configure maven settings.xml (see /usr/share/maven/conf/ on Ubuntu):
+    - Configure maven settings.xml (usually in /usr/share/maven/conf/ on Ubuntu):
 
         Add following and fill <username>, <password> and <gpg.*>
 
