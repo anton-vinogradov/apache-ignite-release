@@ -1,6 +1,6 @@
 0) In case you're on Windows, please install WSL
     See https://msdn.microsoft.com/en-us/commandline/wsl/install_guide for details
-    Perform all operations at bash console! (type "bash" at windows console)
+    Perform all operations in bash console! (type "bash" at windows console)
 
 1) Software required to perform release:
     - Maven 3.x
@@ -12,14 +12,14 @@
             git config --global user.email johndoe@apache.org
     - GPG (already installed at most of *Nix)
 
-    In case you're on Windows, please make sure all listed software installed under WLS.
-    Type "bash" at Windows console and check each one. Use following commands to check:
+    In case you're on Windows, please make sure all listed software installed under WSL.
+    Type "bash" in Windows console and check each one. Use following commands to check:
         java -version
         git --version
         svn --version
         mvn -version
         gpg --version
-    and use 'apt-get install ...' to install in case missed software found
+    and use 'apt install ...' to install anything missing
 
 2) Configuration required to perform release:
     - Create/Import your pgp secret key.
@@ -33,7 +33,7 @@
         gpg --list-sigs <keyname> >> KEYS.txt
         gpg --armor --export <keyname> >> KEYS.txt
 
-    - Configure maven setting.xml:
+    - Configure maven (/usr/share/maven/conf/settings.xml):
 
         Add following and fill <username>, <password> and <gpg.*>
 
@@ -57,7 +57,7 @@
         </profiles>
 
 3) Perform Vote steps and start Vote.
-    Run all vote*.sh scripts
+    Run all vote*.sh scripts (with sudo)
     Scripts are independent of each other and can be run in parallel, except *X_step_Y*.sh
 
 3.1) Perform Release Verification and send Release For Vote
